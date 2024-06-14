@@ -36,12 +36,7 @@
         <div row justify-content-md-center>
 
        <div class="col-md-8">
-        {% for post in posts %}
-           <div class="col-12"><a href="{{post.slug}}">{{post.slug}}</a></div>
-           <div class="col-12"><p>{{post.content}}</p></div>
-           <br>
-        {% endfor %}
-
+           {{post.content}}
         </div>
         </div>
     </div>
