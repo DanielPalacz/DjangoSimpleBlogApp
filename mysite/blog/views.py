@@ -3,10 +3,22 @@ from .models import Post
 from django.contrib.auth.decorators import login_required
 
 
-@login_required
 def home(request):
+    return render(request, "blog/home.html", {})
+
+
+def contact_details(request):
+    return render(request, "blog/contact_details.html", {})
+
+
+def projects(request):
+    return render(request, "blog/projects.html", {})
+
+
+@login_required
+def blog(request):
     posts = Post.newmanager.all()
-    return render(request, "blog/index.html", {"posts": posts})
+    return render(request, "blog/blog.html", {"posts": posts})
 
 
 @login_required
