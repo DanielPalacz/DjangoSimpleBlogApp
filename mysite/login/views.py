@@ -11,5 +11,6 @@ def logged_out(request):
     return render(request, "registration/user_logged_out.html", {})
 
 
+@login_required
 def info(request):
     return render(request, "registration/info.html", {})

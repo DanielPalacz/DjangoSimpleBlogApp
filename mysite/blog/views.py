@@ -15,13 +15,11 @@ def projects(request):
     return render(request, "blog/projects.html", {})
 
 
-@login_required
 def blog(request):
     posts = Post.newmanager.all()
     return render(request, "blog/blog.html", {"posts": posts})
 
 
-@login_required
 def post_single(request, post_slug):
     post = get_object_or_404(Post, slug=post_slug, status="published")
     return render(request, "blog/single.html", {"post": post})
