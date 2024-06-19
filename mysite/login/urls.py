@@ -10,4 +10,5 @@ urlpatterns = [
     path('account/', views.dashboard, name='dashboard'),
     path('logged_out/', views.logged_out, name='logged_out'),
     path('api-info/', views.info, name='api-info'),
+    path('crud/create/', views.crud_create, name='crud-create'),
 ]

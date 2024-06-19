@@ -1,9 +1,12 @@
+{% extends "blog/base.html" %}
+
+
+{% block content %}
+
 {% if request.user.is_authenticated %}
-    <a href="{% url 'login:dashboard' %}">My dashboard</a>
+<h1><a href="{% url 'login:dashboard' %}">My dashboard</a></h1>
     <ul class="menu">
-        <li>dashboard item1</li>
-        <li>dashboard item2</li>
-        <li>dashboard item3</li>
+        <li><a href="/crud/create/">Add post</a></li>
     </ul>
 
         <br>
@@ -14,3 +17,5 @@
             <button type="submit">Logout</button>
         </form>
 {% endif %}
+
+{% endblock %}
