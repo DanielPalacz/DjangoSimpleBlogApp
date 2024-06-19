@@ -5,14 +5,18 @@ Add new post.
 {% endblock %}
 
 {% block content %}
-<h1>Add new post.</h1>
+{% load crispy_forms_tags %}
 
-<form method="post" action="/crud/create/">
-    {% csrf_token %}
-    {{form.as_p}}
-    <br></br>
-    <button type="submit" name="save">Create</button>
-</form>
+<br>
+<u><h1>Add new post:</h1></u>
 
+<div class="container">
+    <form method="post" action="/crud/create/">
+        {% csrf_token %}
+        {{form|crispy}}
+        <br></br>
+        <button type="submit" name="save">Create</button>
+    </form>
+</div>
 
 {% endblock %}

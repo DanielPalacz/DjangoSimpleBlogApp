@@ -15,14 +15,12 @@ class CreatePostForm(forms.Form):
     )
 
     title = forms.CharField(label="Title", max_length=200)
-    excerpt = forms.CharField(label="Excerpt", max_length=200)
-    slug = forms.SlugField(label="Slug", max_length=200)
     publish = forms.DateTimeField(label="Publish date", initial=timezone.now)
     # author = forms.ChoiceField(choices=users)
     author = forms.TypedChoiceField(choices=users)
-    content = forms.CharField(label="Content", max_length=4000)
+    content = forms.CharField(label="Content", max_length=4000, widget=forms.Textarea)
     status = forms.TypedChoiceField(choices=options)
-
+    file = forms.FileField()
 
 
 @login_required
@@ -54,6 +52,3 @@ def crud_create(request):
 
 
     return render(request, "account/crud_create.html", {"form": form})
-
-
-
