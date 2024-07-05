@@ -1,4 +1,5 @@
 # DjangoSimpleBlogApp
+Deployed here: http://danielpalacz.pythonanywhere.com/
 
 ```
 python -m venv venv
