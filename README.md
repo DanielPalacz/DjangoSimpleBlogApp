@@ -1,4 +1,16 @@
 # DjangoSimpleBlogApp
+
+```
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+python manage.py migrate
+python manage.py createsuperuser
+```
+
+
+### blog application
 ```
 Developed home page app endpoints:
 	GET /
@@ -15,21 +27,11 @@ Developed 'blog' app endpoints:
 	GET /blog/<post_slug_id>
 ```
 
-# DjangoUserLoginAuth
- - login app
+### login application (DjangoUserLoginAuth)
  - usage of basic Django login / logout functionalities
  - django.contrib.auth.views.LoginView
  - django.contrib.auth.views.LogoutView
 ```
-python -m venv venv
-source venv/bin/activate
-pip install Django
-
-django-admin startproject mysite
-cd mysite
-python manage.py startapp login
-	register 'login' application
-
 Developed html templates
  - login.html
  - user_logged_out.html
