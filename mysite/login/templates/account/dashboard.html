@@ -1,3 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+Dashboard page.
+{% endblock %}
+
+
+{% block content %}
+
 {% if request.user.is_authenticated %}
     <a href="{% url 'login:dashboard' %}">My dashboard</a>
     <ul class="menu">
@@ -6,6 +15,7 @@
         <li>dashboard item3</li>
     </ul>
 
+        Check<a href="{% url 'login:api-info' %}"> api-info </a>page.
         <br>
         <p>Logged as '{{request.user}}' user.</p>
 
@@ -14,3 +24,5 @@
             <button type="submit">Logout</button>
         </form>
 {% endif %}
+
+{% endblock %}

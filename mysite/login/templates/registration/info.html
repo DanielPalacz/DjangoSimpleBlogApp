@@ -1,24 +1,39 @@
-<u><h1>Implemented endpoints:</h1></u>
+{% extends "blog/base.html" %}
+
+{% block title %}
+Dashboard page.
+{% endblock %}
+
+{% block content %}
+
 <hr>
-<div class="container">
-    <pre>
-    <h2>Django User Login Authentication:</h2>
-    <p>GET /login</p>
-    <p>POST /logout</p>
-    <p>GET /logged_out</p>
+<div>
+    <h1>Django User Login Authentication:</h1>
+    <ul>
+        <li>GET /login</li>
+        <li>POST /logout</li>
+        <li>GET /logged_out</li>
+    </ul>
 
-    <h2>User dashboard page (login required)</h2>
-    <p>GET /account</p>
+    <h1>User dashboard page (login required)</h1>
+    <ul>
+        <li>GET /account</li>
+    </ul>
     <hr>
 
-    <h2>Django simple blog app:</h2>
-    <p>GET blog/</p>
-    <p>GET blog/[post_slug_id]</p>
+    <h1>Django simple blog app:</h1>
+    <ul>
+        <li>GET blog/</li>
+        <li>GET blog/[post_slug_id]</li>
+    </ul>
     <hr>
 
-    <h2>Other endpoints:</h2>
-    <p>GET projects/</p>
-    <p>GET contact/</p>
+    <h1>Other endpoints:</h1>
+    <ul>
+        <li>GET projects/</li>
+        <li>GET contact/</li>
+    </ul>
     <hr>
-</pre>
 </div>
+
+{% endblock %}
