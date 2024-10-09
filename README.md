@@ -51,3 +51,9 @@ Developed 'login' app endpoints:
 	GET /account
 		- dashboard page
 ```
+
+# Tests
+From the repository directory:
+```
+pytest -s -vv tests/ --html=report.html --self-contained-html
+```

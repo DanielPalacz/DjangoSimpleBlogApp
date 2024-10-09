@@ -29,8 +29,13 @@ class Post(models.Model):
         return reverse("blog:post_single", args=[self.slug])
 
     class Meta:
-        ordering = ("-publish",)
-        # minus means descending order
+        ordering = ("-publish",) # minus means descending order
+        # db_table
+        # get_latest_by
+        # verbose_name
+        # verbose_name_plural
+        # abstract
+
 
     def __str__(self):
         return self.title
