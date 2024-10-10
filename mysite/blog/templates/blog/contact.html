@@ -1,0 +1,36 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+Contact page.
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+		<div class="main container" id="contact">
+			<h2 align="left">CONTACT DETAILS:</h2>
+			<div class="row">
+			<div class="col-8">
+				<ul>
+					<li>Name: Daniel Palacz</li>
+					<li>Email: daniel.palacz@pyx.solutions</li>
+					<li>Phone: +48 505-393-579</li>
+				</ul>
+				<hr>
+				</div>
+			</div>
+
+			<h2 align="left">CONTACT FORM:</h2>
+			<div class="row">
+				<div class="col-8">
+				<form method="post" action="/contact/" class="form-group">
+					{% csrf_token %}
+					{{form|crispy}}
+					<input type="submit" value="Send">
+				</form>
+				</div>
+			</div>
+		</div>
+
+
+{% endblock %}
