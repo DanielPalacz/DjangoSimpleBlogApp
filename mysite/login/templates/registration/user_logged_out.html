@@ -1,3 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+Login page.
+{% endblock %}
+
+
+{% block content %}
+
     {% if request.user.is_authenticated %}
             <p>Logged as '{{request.user}}' user.</p>
 
@@ -11,3 +20,6 @@
 <p>You have been successfully logged out. You can <a href="{% url 'login:login' %}">log-in again.</a>
 </p>
 {% endif %}
+
+
+{% endblock %}
