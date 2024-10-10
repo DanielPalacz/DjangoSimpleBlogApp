@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jh9bv7$bzg=_0^#5&s$!e7l9y9=srapr*-u2=ydx23*6w839=7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -137,10 +137,16 @@ LOGOUT_REDIRECT_URL = "/logged_out/"
 LOGIN_URL = "/login/"
 LOGOUT_URL = "/logout/"
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'  # lub inny serwer SMTP
-EMAIL_HOST_USER = 'apikey'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-DEFAULT_FROM_EMAIL = 'daniel.palacz@pyx.solutions'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.sendgrid.net'  # lub inny serwer SMTP
+# EMAIL_HOST_USER = 'apikey'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+# DEFAULT_FROM_EMAIL = 'daniel.palacz@pyx.solutions'
+
+# moved to use web api instead of smtp
+# https://github.com/sklarsa/django-sendgrid-v5
+EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
+SENDGRID_SANDBOX_MODE_IN_DEBUG=False
