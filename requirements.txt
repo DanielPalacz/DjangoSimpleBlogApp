@@ -3,9 +3,11 @@ attrs==23.2.0
 certifi==2024.7.4
 charset-normalizer==3.3.2
 crispy-bootstrap4==2024.1
+crispy-bootstrap5==2024.10
 Django==5.0.6
-django-crispy-forms==2.2
+django-crispy-forms==2.3
 exceptiongroup==1.2.1
+gunicorn==23.0.0
 h11==0.14.0
 idna==3.7
 iniconfig==2.0.0
