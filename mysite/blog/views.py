@@ -1,7 +1,9 @@
 from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect
+from django.contrib import messages
 from django.core.mail import send_mail
-from .models import Post
+
 # from django.contrib.auth.decorators import login_required
+from .models import Post
 from .forms import ContactForm
 
 
@@ -20,12 +22,13 @@ def contact(request):
 
             # Send the email
             send_mail(
-                subject=f"Message from {name} [{email}]",  # Subject of the email
+                subject=f"Contact form message from {name} [{email}].",  # Subject of the email
                 message=message,  # Message content
                 from_email='daniel.palacz@pyx.solutions',  # From email
                 recipient_list=['daniel.palacz@pyx.solutions'],  # Recipient email list
                 fail_silently=False,  # Raise exception if the email fails to send
             )
+            messages.success(request, f"{name}, your message was just sent to me. Thank you.")
             return HttpResponseRedirect("/contact/")
 
     else:
