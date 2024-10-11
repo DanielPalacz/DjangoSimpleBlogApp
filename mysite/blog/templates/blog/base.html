@@ -14,6 +14,16 @@
     </title>
 
     <style>
+        nav .navbar-brand {
+            color: #ffffff; /* Default color */
+            transition: color 0.3s ease;
+        }
+
+        nav .navbar-brand:hover {
+            color: #ffffff; /* Change color on hover */
+            text-decoration: underline;
+        }
+
     {% block style %}
     {% endblock %}
     </style>
