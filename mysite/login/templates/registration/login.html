@@ -6,7 +6,7 @@ Login page.
 
 
 {% block content %}
-
+<div class="login pt-1 ml-1">
 
 {% if form.errors %}
     <p> Your username and password does not match</p>
@@ -22,7 +22,7 @@ Login page.
     {% else %}
 
 
-    <u><p>Please log in:</p></u>
+    <u>Please log in:</u>
 
 
     <div class="login-form">
@@ -38,5 +38,5 @@ Login page.
     {% endif %}
 {% endif %}
 
-
+</div>
 {% endblock %}

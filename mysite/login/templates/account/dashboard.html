@@ -7,22 +7,23 @@ Dashboard page.
 
 {% block content %}
 
-{% if request.user.is_authenticated %}
-    <a href="{% url 'login:dashboard' %}">My dashboard</a>
-    <ul class="menu">
-        <li>dashboard item1</li>
-        <li>dashboard item2</li>
-        <li>dashboard item3</li>
-    </ul>
+    <div class="dashboard pt-1 ml-1">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'login:dashboard' %}">My dashboard</a>
+                    <ul class="menu">
+                        <li>dashboard item1</li>
+                        <li>dashboard item2</li>
+                        <li>dashboard item3</li>
+                    </ul>
 
-        Check<a href="{% url 'login:api-info' %}"> api-info </a>page.
-        <br>
-        <p>Logged as '{{request.user}}' user.</p>
+                        Check<a href="{% url 'login:api-info' %}"> api-info </a>page.
+                        <br>
+                        <p>Logged as '{{request.user}}' user.</p>
 
-        <form method="post" action="{% url 'login:logout' %}">
-            {% csrf_token %}
-            <button type="submit">Logout</button>
-        </form>
-{% endif %}
-
+                        <form method="post" action="{% url 'login:logout' %}">
+                            {% csrf_token %}
+                            <button type="submit">Logout</button>
+                        </form>
+                {% endif %}
+    </div>
 {% endblock %}
